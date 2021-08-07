@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<!--
+
+	Author:		 		James Marion Lynch, CEO of
+	Corp:				JML-3D-Studios
+	Date:	        	07-06-2021.
+	Version:	        Alpha 1.0.0.0.
+	Title:		        CSS3 flips a playing card to reveal the back of the card.		
+	Filename:	        FlippablePlayingCard.html
+	Languages:			HTML5, CSS3.
+	
+	Notes:
+
+-->
+
+<html lang="en-US">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<style>
+		
+			html{ 
+				font-size: 1vh;
+			}
+
+			body
+			{
+				background: url(Background.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				color: white;
+				border: none;
+				font-family: Arial, Verdana, Helvetica, sans-serif;
+				font-weight: normal;
+				font-size: 1.2vh;
+				overflow: hidden;
+				line-height: normal;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			#tracker{
+				position: relative;
+				width: 100%;
+				height: auto;
+				margin: 1vh;
+				padding: 1vh;
+			}
+
+			.clearboth{ clear: both; }
+			.center{ text-align: center; }
+
+			.flex-container{
+				display: flex;
+				flex-wrap: nowrap;
+			}
+
+			/* Valid position values are absolute, fixed, relative, static, sticky.  */
+			.flex-container > div{
+				margin: .8vh;
+				text-align: center;
+				position: sticky;
+			}
+
+			.center-x{
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.center-y{
+				margin-top: auto;
+				margin-bottom: auto;
+			}
+
+			.card-outer{
+				position: relative;
+				box-sizing: border-box;
+				top: 0;
+				left: 0;
+				width: 9vh;
+				height: 13vh;
+				perspective: 100vh;
+				z-index: 4000;
+			}
+
+			.card, .card-red{
+				background-color: white;
+				-webkit-box-shadow: 10px 10px 10px gray;    
+				-moz-box-shadow:    10px 10px 10px gray;   
+				box-shadow:         10px 10px 10px gray;
+				border: .25vh solid purple;
+				border-radius: 1vh;
+				box-sizing: border-box;
+				color: black;
+				font-size: 12vh;
+				font-weight: normal;
+				display: inline-block;
+				width: 9vh;
+				height: 13vh;
+				line-height: 100%;
+				margin: 1vh;
+				opacity: 1;
+				overflow: hidden;
+				padding: .1vh;
+				position: relative;
+				top: 0;
+				left: 0;
+				text-align: center;
+				text-decoration: none;
+				z-index: 900000000;
+			}
+
+			.card-red{
+				color: red;
+			}
+
+			.card-inner{
+				position: relative;
+				box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				transition: transform 2s;
+				transform-style: preserve-3d;
+				z-index: 900000;
+			}
+
+			.card-outer:hover .card-inner{
+				transform: rotateY(180deg);
+			}
+
+			.card-front, .card-back{
+				position: fixed;
+				box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				z-index: 900000;
+			}
+
+			.card-back{
+				background-color: white;
+				color: blue;
+				transform: rotateY(180deg);
+				z-index: 900000;
+			}
+
+			.w3-display-container{ position:relative; }
+			.w3-display-container:hover{ display:block; }
+			.responsive{ width: 100%; height: auto; }
+
+			#card-0{
+				position: sticky;
+				left: 40%;
+				top: 20%;
+			}
+		</style>
+		<title>Flippable Playing Card</title>
+    </head>
+    <body>
+
+		<div id="card-0" class="card-outer">
+			<div class="card-inner">
+				<div class="card-front card">
+					<img src="Ace_Of_Hearts.png" alt="Ace of Hearts" width="64" height="90">
+				</div>
+				<div class="card-back  card">
+					<img src="CardBack.jpg" alt="Back of card" width="64" height="90">					
+				</div>
+			</div>
+		</div>
+
+    </body>
+</html>
