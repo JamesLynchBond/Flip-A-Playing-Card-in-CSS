@@ -2,27 +2,65 @@
 
 <!--
 
-	Author:		 		James Marion Lynch, CEO of
-	Corp:				JML-3D-Studios
-	Date:	        	07-06-2021.
+	Author:		 	James Marion Lynch
+	Corp:			JML-3D-Studios
+	Date:	        	08-30-2021.
 	Version:	        Alpha 1.0.0.0.
 	Title:		        CSS3 flips a playing card to reveal the back of the card.		
-	Filename:	        FlippablePlayingCard.html
-	Languages:			HTML5, CSS3.
+	Filename:	        index.html
+	Languages:		HTML5, Internal CSS3.
 	
 	Notes:
 
 -->
 
 <html lang="en-US">
-    <head>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- 
+
+	The '<head>' item below is the opening tag for the head element.
+	All elements between opening & closing tags are children of the parent enclosing tag element.
+
+	Definition and Usage: (From w3schools.com)
+	The <meta> tag defines metadata about an HTML document. Metadata is data (information) about data.
+
+	<meta> tags always go inside the <head> element, and are typically used to specify character set, 
+	page description, keywords, author of the document, and viewport settings.
+
+	Metadata will not be displayed on the page, but is machine parsable.
+
+	Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services.
+
+	There is a method to let web designers take control over the viewport (the user's visible area of a web page), 
+	through the <meta> tag (See "Setting The Viewport").
+
+	ceo = chief executive officer
+	cfo = chief financial officer
+	coo = chief operating officer
+	cto = chief technical officer 
+
+-->
+
+	<head>
+
+		<meta content="text/html;  charset=utf-8" http-equiv="Content-Type" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">		
+		<meta name="author"      	content="James Marion Lynch" />
+		<meta name="business-name"  content="JML-3D-Studios" />
+		<meta name="business-type"  content="sole proprietor" />
+		<meta name="ceo"      	 	content="James Marion Lynch" />
+		<meta name="description" 	content="Asteroids ship with sub-systems" />
+		<meta name="ceo"      	 	content="James Marion Lynch" />
+		<meta name="cfo"      	 	content="James Marion Lynch" />
+		<meta name="coo"      	 	content="James Marion Lynch" />
+		<meta name="cto"      	 	content="James Marion Lynch" />
+		<meta name="founder"     	content="James Marion Lynch" />
+		<meta name="keywords"    	content="WebGL, GLSL, JavaScript" />
+		<meta name="owner"       	content="James Marion Lynch" />
 		<style>
-		
 			html{ 
 				font-size: 1vh;
 			}
-
 			body
 			{
 				background: url(Background.jpg);
@@ -40,7 +78,6 @@
 				margin: 0;
 				padding: 0;
 			}
-
 			#tracker{
 				position: relative;
 				width: 100%;
@@ -48,22 +85,18 @@
 				margin: 1vh;
 				padding: 1vh;
 			}
-
 			.clearboth{ clear: both; }
 			.center{ text-align: center; }
-
 			.flex-container{
 				display: flex;
 				flex-wrap: nowrap;
 			}
-
 			/* Valid position values are absolute, fixed, relative, static, sticky.  */
 			.flex-container > div{
 				margin: .8vh;
 				text-align: center;
 				position: sticky;
 			}
-
 			.center-x{
 				margin-left: auto;
 				margin-right: auto;
@@ -73,7 +106,6 @@
 				margin-top: auto;
 				margin-bottom: auto;
 			}
-
 			.card-outer{
 				position: relative;
 				box-sizing: border-box;
@@ -84,7 +116,6 @@
 				perspective: 100vh;
 				z-index: 4000;
 			}
-
 			.card, .card-red{
 				background-color: white;
 				-webkit-box-shadow: 10px 10px 10px gray;    
@@ -111,11 +142,9 @@
 				text-decoration: none;
 				z-index: 900000000;
 			}
-
 			.card-red{
 				color: red;
 			}
-
 			.card-inner{
 				position: relative;
 				box-sizing: border-box;
@@ -125,11 +154,9 @@
 				transform-style: preserve-3d;
 				z-index: 900000;
 			}
-
 			.card-outer:hover .card-inner{
 				transform: rotateY(180deg);
 			}
-
 			.card-front, .card-back{
 				position: fixed;
 				box-sizing: border-box;
@@ -146,11 +173,9 @@
 				transform: rotateY(180deg);
 				z-index: 900000;
 			}
-
 			.w3-display-container{ position:relative; }
 			.w3-display-container:hover{ display:block; }
 			.responsive{ width: 100%; height: auto; }
-
 			#card-0{
 				position: sticky;
 				left: 40%;
@@ -158,8 +183,8 @@
 			}
 		</style>
 		<title>Flippable Playing Card</title>
-    </head>
-    <body>
+	</head>
+ 	<body>
 
 		<div id="card-0" class="card-outer">
 			<div class="card-inner">
@@ -171,6 +196,5 @@
 				</div>
 			</div>
 		</div>
-
     </body>
 </html>
